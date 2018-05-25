@@ -1,0 +1,31 @@
+#! /bin/sh
+
+# keyboard
+setxkbmap -layout de
+
+# startups
+sxhkd &
+nitrogen --restore &
+compton &
+xfce4-power-manager &
+xfce4-panel --disable-wm-check &
+udiskie & 
+lxpolkit &
+
+bspc monitor -d Web Term Work Org Media Misc Misc2
+
+bspc config top_padding         30
+bspc config bottom_padding      30 
+bspc config left_padding        35
+bspc config right_padding       35
+bspc config border_width        0
+bspc config window_gap          25
+
+bspc config split_ratio          0.50
+bspc config borderless_monocle   true
+bspc config gapless_monocle      true
+
+bspc rule -a Gimp desktop='^8' state=floating follow=on
+bspc rule -a Screenkey manage=off
+bspc rule -a xfce4-panel floating=on manage=off
+bspc rule -a wrapper-1.0 floating=on border=off focus=on
