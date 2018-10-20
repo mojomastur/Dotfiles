@@ -1,0 +1,667 @@
+[colors]
+;background = ${xrdb:color0:#222}
+background = #FF5D5B
+background-alt = #7881DE
+foreground = #C1C2B2
+foreground-alt = #F3AF66
+primary = #ffb52a
+secondary = #e60053
+alert = #bd2c40
+
+[bar/top]
+;width = 1030
+width = 160
+height = 60
+offset-x = 0 
+offset-y = 20
+
+border-size = 0
+border-color = #CB1F44
+
+background = #F3AF66
+;background = #CB1F44
+;foreground = #D05704
+foreground = #000000
+
+padding-left = 1
+
+font-0 = Envy Code R:size=12:style=Bold:antialias=true;2
+font-1 = Font Awesome 5 Brands:size=14;2
+font-2 = Font Awesome 5 Free:style=Regular:size=15;2
+font-3 = Font Awesome 5 Free:style=Solid:size=16;2
+font-4 = Font Awesome 5:size=16;3
+
+modules-left = date 
+modules-center =
+modules-right = 
+
+[bar/top2]
+width = 160
+height = 30
+offset-x = 0
+offset-y = 50
+override-redirect = false
+
+border-size = 0
+;border-color = #A0B260
+border-color = #CB1F44
+
+;background = #CB1F44
+background = #F3AF66
+;foreground = #348481
+foreground = #000000
+
+padding-left = 1
+
+font-0 = Envy Code R:size=8:style=Bold:antialias=true;2
+font-1 = Font Awesome 5 Brands:size=10;2
+font-2 = Weather Icons:size=8;1
+
+modules-left = openweathermap-fullfeatured
+
+[bar/A1]
+width = 145
+height = 60
+offset-x = 0
+offset-y = 110
+
+background = #CB1F44
+;background =
+;foreground = #C1C2B2
+foreground = #000000
+
+border-size = 0
+border-color = #000000
+
+padding-left = 0
+
+font-0 = Envy Code R:size=10:style=Bold:antialias=true;2
+font-1 = Font Awesome 5 Brands:size=10;2
+font-2 = Font Awesome 5 Free:style=Regular:size=10;2
+font-3 = Font Awesome 5 Free:style=Solid:size=10;2
+font-4 = Font Awesome 5:size=10;3
+
+modules-left = volume
+
+[bar/A2]
+width = 155
+height = 60
+offset-x = 0
+offset-y = 200
+
+background = #CB1F44
+;background = 
+;foreground = #C1C2B2
+foreground = #000000
+
+border-size = 0
+border-color = #CB1F44
+
+padding-left = 1
+
+font-0 = Envy Code R:size=10:style=Bold:antialias=true;2
+font-1 = Font Awesome 5 Brands:size=12;2
+;font-2 = Weather Icons:size=12;1
+font-2 = Font Awesome 5 Free:style=Regular:size=10;2
+font-3 = Font Awesome 5 Free:style=Solid:size=10;2
+font-4 = Font Awesome 5:size=12;3
+
+modules-left = wlan
+
+[bar/B1]
+width = 100
+height = 60
+offset-x = 0
+offset-y = 290
+
+background = #D4B634
+foreground = #000000
+
+border-size = 0
+border-color = #348481
+
+padding-left = 1
+
+font-0 = Envy Code R:size=10:style=Bold:antialias=true;2
+font-1 = Font Awesome 5 Brands:size=10;2
+font-2 = Weather Icons:size=10;1
+font-3 = Font Awesome 5 Free:style=Regular:size=10;2
+font-4 = Font Awesome 5 Free:style=Solid:size=10;2
+font-5 = Font Awesome 5:size=10;3
+
+modules-left = battery 
+  
+[bar/B2]
+width = 135
+height = 60
+offset-x = 0
+offset-y = 380
+
+background = #D4B634
+;foreground = #C1C2B2
+foreground = #000000
+
+border-size = 0
+border-color = #348481
+
+padding-left = 1
+
+font-0 = Envy Code R:size=10:style=Bold:antialias=true;2
+font-1 = Font Awesome 5 Brands:size=12;2
+font-2 = Weather Icons:size=10;1
+;font-2 = Font Awesome 5 Free:style=Regular:size=12;2
+font-3 = Font Awesome 5 Free:style=Solid:size=12;2
+font-4 = Font Awesome 5:size=12;3
+
+modules-left = temperature
+
+[bar/C1]
+width = 105
+height = 60
+offset-x = 0
+offset-y = 470
+
+background = #348481
+;foreground = #C1C2B2
+foreground = #000000
+
+border-size = 0
+border-color = #D4B634
+
+padding-left = 1
+
+font-0 = Envy Code R:size=10:style=Bold:antialias=true;2
+font-1 = Font Awesome 5 Brands:size=10;2
+font-2 = Font Awesome 5 Free:style=Regular:size=10;2
+font-3 = Font Awesome 5 Free:style=Solid:size=10;2
+font-4 = Font Awesome 5:size=10;3
+
+modules-left = cpu 
+
+[bar/C2]
+width = 95
+height = 60
+offset-x = 0
+offset-y = 560
+
+background = #348481
+;foreground = #C1C2B2
+foreground = #000000
+
+padding-left = 1
+
+border-size = 0
+border-color = #D4B634
+
+font-0 = Envy Code R:size=10:style=Bold:antialias=true;2
+font-1 = Font Awesome 5 Brands:size=10;2
+font-2 = Font Awesome 5 Free:style=Regular:size=12;2
+font-3 = Font Awesome 5 Free:style=Solid:size=12;2
+font-4 = Font Awesome 5:size=12;3
+
+modules-left = memory
+ 
+[bar/D1]
+width = 155
+height = 60
+offset-x = 0
+offset-y = 650
+
+background = #D1145F
+;background = #348481
+;foreground = #C1C2B2
+foreground = #000000
+
+border-size = 0
+;border-color = #348481
+border-color = #D1145F
+
+padding-left = 1
+
+font-0 = Envy Code R:size=10:style=Bold:antialias=true;2
+font-1 = Font Awesome 5 Brands:size=12;2
+font-2 = Font Awesome 5 Free:style=Regular:size=12;2
+font-3 = Font Awesome 5 Free:style=Solid:size=12;2
+font-4 = Font Awesome 5:size=12;3
+
+modules-left = filesystem2
+ 
+[bar/D2]
+width = 120
+height = 60
+offset-x = 0
+offset-y = 740
+
+background = #D1145F
+;background = #348481
+foreground = #000000
+
+border-size = 0
+;border-color = #348481
+border-color = #D1145F
+
+padding-left = 1
+
+font-0 = Envy Code R:size=10:style=Bold:antialias=true;2
+font-1 = Font Awesome 5 Brands:size=12;2
+font-2 = Font Awesome 5 Free:style=Regular:size=12;2
+font-3 = Font Awesome 5 Free:style=Solid:size=12;2
+font-4 = Font Awesome 5:size=12;3
+
+modules-left = filesystem1
+
+[bar/E1]
+width = 140
+height = 60
+offset-x = 0
+offset-y = 830
+
+background = #7EAE52
+foreground = #000000
+
+border-size = 0
+border-color = #7EAE52
+
+padding-left = 1
+
+font-0 = Envy Code R:size=10:style=Bold:antialias=true;2
+font-1 = Font Awesome 5 Brands:size=12;2
+font-2 = Font Awesome 5 Free:style=Regular:size=12;2
+font-3 = Font Awesome 5 Free:style=Solid:size=12;2
+font-4 = Font Awesome 5:size=12;3
+
+modules-left = xwindow 
+
+[bar/E2]
+width = 160
+height = 60
+offset-x = 0
+offset-y = 920
+
+background = #7EAE52
+;background = #A0B260
+foreground = #000000
+
+border-size = 0
+;border-color = #A0B260
+border-color = #7EAE52
+
+padding-left = 1
+
+font-0 = Envy Code R:size=8:style=Bold:antialias=true;2
+font-1 = Font Awesome 5 Brands:size=12;2
+font-2 = Font Awesome 5 Free:style=Regular:size=12;2
+font-3 = Font Awesome 5 Free:style=Solid:size=8;2
+font-4 = Font Awesome 5:size=12;3
+
+modules-left = news-archlinux
+
+[bar/bottom]
+;monitor = ${env:MONITOR:HDMI-1}
+width = 1700
+height = 40
+offset-x = 180
+offset-y = 10
+bottom = true
+fixed-center = false
+
+background = 
+foreground = #000000
+
+line-size = 0
+line-color = #f00
+
+border-size = 0
+border-color = #CCECE8DF
+
+padding-left = 0
+padding-right = 0
+
+module-margin-left =
+module-margin-right = 
+
+font-0 = inconsolata:size=14:style=Bold:antialias=true;3
+font-1 = Font Awesome 5 Brands:size=14;2
+font-2 = Font Awesome 5 Free:style=Regular:size=14;2
+font-3 = Font Awesome 5 Free:style=Solid:size=14;2
+font-4 = Font Awesome 5:size=14;2
+font-5 = Weather Icons:size=14;1
+
+modules-left = workspaces 
+;modules-center = openweathermap-fullfeatured
+
+tray-position = 
+tray-detached = true
+tray-maxsize = 16
+tray-transparent = false
+tray-background = #0F4293 
+tray-offset-x = 5
+tray-offset-y = 0
+tray-padding = 0
+
+[module/workspaces]
+type = internal/xworkspaces
+pin-workspaces = false
+enable-click = true
+enable-scroll = false
+format-padding = 0
+icon-0 = Web;
+icon-1 = Term;
+icon-2 = Work;
+icon-3 = Org;
+icon-4 = Media;
+icon-5 = Mail;
+icon-6 = Steam;
+icon-7 = Misc;
+;icon-8 = 9;?
+;icon-9 = 10;?
+;icon-default = ""
+
+format = " <label-state> "
+
+label-active = "  %icon%  "
+label-active-foreground = #000000
+label-active-background = #CCD05704
+label-active-underline = #FFFFFF
+label-active-padding = 2
+
+label-empty = "  %icon%  "
+label-empty-padding = 2
+label-empty-foreground = #000000
+label-empty-underline = #000000
+label-empty-background = #D05704
+
+[module/news-archlinux]
+type = custom/script
+exec = ~/.polybar-scripts/news-archlinux.py
+interval = 600
+
+format = " <label> "
+label = "%output:0:21:...%"
+;label-background = #2676FE
+
+[module/xwindow]
+type = internal/xwindow
+label = "%title:0:15:...%"
+label-background = 
+;label-underline = #88B455
+
+[module/filesystem1]
+type = internal/fs
+interval = 600
+
+fixed-values = false
+
+mount-0 = "/"
+;mount-1 = "/home"
+
+format = "<label>"
+format-mounted = <label-mounted>
+
+;label-mounted = %{F#000000}%mountpoint%%{F-}: %percentage_used%%
+label-mounted = %mountpoint%: %percentage_free%% of %total%
+
+label-unmounted = %mountpoint% not mounted
+
+[module/filesystem2]
+type = internal/fs
+interval = 600
+
+fixed-values = false
+
+mount-0 = "/home"
+;mount-1 = "/home"
+
+format = "<label>"
+format-mounted = <label-mounted>
+
+;label-mounted = %{F#000000}%mountpoint%%{F-}: %percentage_used%%
+label-mounted = %mountpoint%: %percentage_free%% of %total%
+
+label-unmounted = %mountpoint% not mounted
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+;format-prefix = "Ã¯ÂÂ½"
+format-prefix = "CPU-Load: "
+;format-prefix-foreground = #C1C2B2
+;format-underline = #7FC4B0
+label ="%percentage%% "
+format-background = 
+
+[module/memory]
+type = internal/memory
+interval = 2
+;format-prefix =  "Ã¯ÂÂ¸"
+format-prefix = "Memory: "
+;format-prefix-foreground = #C1C2B2
+;format-underline = #EE780B
+label ="%percentage_used%% "
+
+format-background = 
+
+[module/wlan]
+type = internal/network
+interface = wlp3s0
+interval = 3.0
+
+format-connected = "<label-connected>"
+;format-connected-underline = #FFFFFF
+label-connected = " %essid%"
+format-connected-prefix = 
+
+format-disconnected = <label-disconnected> 
+;format-disconnected-underline = ${self.format-connected-underline}
+label-disconnected = "  No Connection "
+;label-disconnected-foreground = #C1C2B2
+
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
+ramp-signal-foreground = ${colors.foreground-alt}
+
+[module/openweathermap-fullfeatured]
+type = custom/script
+exec = ~/.polybar-scripts/openweathermap-fullfeatured.sh
+interval = 600
+label-font = 6
+
+format = "<label>"
+format-prefix = " "
+format-prefix-background = #D05704
+format-suffix = " "
+format-suffix-background = #D05704
+label-background = #D05704
+
+[module/date]
+type = internal/date
+interval = 5
+
+date = "%a %e %b"
+date-alt = "%D"
+
+time = "%H:%M"
+time-alt = %H:%M:%S
+
+;format-prefix = "¯ÂÂ "
+;format-foreground = #C1C2B2
+;format-prefix-foreground = #000000
+,format-underline = #FF5D5B
+;format-background = #FF5D5B
+
+label = "%time% %date%"
+format = <label>
+
+[module/time]
+type = internal/date
+interval = 60
+
+date = "%a, %b %eth, %Y"
+date-alt = "%D"
+
+time = "%H:%M"
+time-alt = %H:%M:%S
+
+;label-font = 8
+;format-prefix = "  "
+;format-foreground = #C1C2B2
+;format-prefix-foreground = #000000
+;format-underline = #FF5D5B
+;format-background = #FF5D5B
+
+label = "%time% "
+format = <label>
+
+[module/player-mpris-tail]
+type = custom/script
+exec = ~/.polybar-scripts/player-mpris-tail.py
+tail = true
+
+format= "<label>"
+label-font = 1
+;format-foreground = #C1C2B2
+format-background = 
+label = %output:0:25%...
+
+[module/volume]
+type = internal/volume
+
+format-volume = "<label-volume><bar-volume>"
+label-volume = "  "
+;label-volume-foreground = #C1C2B2
+label-volume-background = 
+label-volume-underline = 
+format-volume-suffix = " "
+format-volume-suffix-background = 
+
+format-muted= " <label-muted> "
+;format-muted-foreground = #000000
+label-muted = "  No Sound "
+label-muted-background = 
+
+bar-volume-width = 10
+;bar-volume-foreground = #000000
+;bar-volume-foreground-0 = #55aa55
+;bar-volume-foreground-1 = #55aa55
+;bar-volume-foreground-2 = #55aa55
+;bar-volume-foreground-3 = #55aa55
+;bar-volume-foreground-4 = #55aa55
+;bar-volume-foreground-5 = #f5a70a
+;bar-volume-foreground-6 = #ff5555
+bar-volume-background = #FF5D5B
+bar-volume-gradient = false
+bar-volume-indicator = |
+bar-volume-indicator-font = 2
+bar-volume-indicator-background = 
+bar-volume-fill = 
+bar-volume-fill-font = 2
+bar-volume-fill-background = 
+bar-volume-empty = 
+bar-volume-empty-font = 2
+;bar-volume-empty-foreground = 
+bar-volume-empty-background = 
+;bar-volume-underline = #116482
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = ADP1
+full-at = 100
+
+format-charging = "<label-charging> "
+format-charging-prefix = "Charging: "
+
+format-discharging = "<label-discharging> "
+format-discharging-prefix = "Battery: "
+
+ramp-capacity-0 = " Ã¯ÂÂ"
+ramp-capacity-1 = " Ã¯ÂÂ"
+ramp-capacity-2 = " Ã¯ÂÂ"
+ramp-capacity-3 = " Ã¯ÂÂ"
+ramp-capacity-4 = " Ã¯ÂÂ"
+;ramp-capacity-foreground = #C1C2B2
+
+animation-charging-0 = " Ã¯ÂÂ"
+animation-charging-1 = " Ã¯ÂÂ"
+animation-charging-2 = " Ã¯ÂÂ"
+animation-charging-3 = " Ã¯ÂÂ"
+animation-charging-4 = " Ã¯ÂÂ"
+;animation-charging-foreground = #C1C2B2
+animation-charging-framerate = 750
+
+[module/temperature]
+type = internal/temperature
+thermal-zone = 0
+warn-temperature = 60
+
+format = " <label> "
+format-prefix = "Temperature: "
+;format-underline = #DF4B03
+format-warn = " <ramp> <label-warn> "
+format-warn-background = 
+format-background = 
+
+label = %temperature-c%
+;label-warn = "%temperature% "
+;label-warn-foreground = #000000
+;label-warn-background = #DF4B03
+
+ramp-0 = " Ã¯ÂÂ"
+ramp-1 = " Ã¯ÂÂ"
+ramp-2 = " Ã¯ÂÂ"
+ramp-3 = " Ã¯ÂÂ"
+ramp-4 = " Ã¯ÂÂ"
+;ramp-foreground = #C1C2B2
+
+[module/menu-apps]
+type = custom/menu
+expand-right = true
+label-open = "Applications"
+label-close = x
+label-separator = |
+;label-open-background = #416170
+;label-close-backround = #5a000000
+
+menu-0-0 = Internet
+menu-0-0-exec = menu-open-1
+menu-0-1 = Office
+menu-0-1-exec = menu-open-2
+menu-0-2 = Multimedia
+menu-0-2-exec = menu-open-3
+menu-0-3 = Update
+menu-0-3-exec = pamac-manager &
+
+menu-1-0 = Firefox
+menu-1-0-exec = firefox &
+menu-1-1 = Thunderbird
+menu-1-1-exec = thunderbird &
+menu-1-2 = Steam
+menu-1-2-exec = steam &
+
+menu-2-0 = TextMaker
+menu-2-0-exec = textmaker18 &
+menu-2-1 = Presentations
+menu-2-1-exec = presentations18
+menu-2-2 = PlanMaker
+menu-2-2-exec = planmaker18
+
+menu-3-0 = Spotify
+menu-3-0-exec = spotify &
+menu-3-1 = Vlc
+menu-3-1-exec = vlc &
+
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+compositing-background = screen
+;compositing-foreground = source
+;compositing-border = over
+
+[global/wm]
+margin-top = 0
+margin-bottom = 0
+
+; vim:ft=dosini
