@@ -8,7 +8,7 @@ audio.sources=pulse
 ##vis tries to find the correct pulseaudio sink, however this will not work on all systems.
 ##If pulse audio is not working with vis try switching the audio source. A list can be found by running the
 ##command pacmd list-sinks  | grep -e 'name:'  -e 'index'
-audio.pulse.source=1
+audio.pulse.source=0
 
 ##Defaults to "/tmp/mpd.fifo"
 #mpd.fifo.path=/tmp/mpd.fifo
@@ -27,7 +27,7 @@ audio.high.cutoff.frequency=30
 
 ##Applies scaling factor to both lorenz and ellipse visualizers. This is useful when the system audio is set
 #to a low volume.
-visualizer.scaling.multiplier=1.0
+visualizer.scaling.multiplier=2.0
 
 ##Configures the visualizers and the order they are in. Available visualizers are spectrum,lorenz,ellipse.
 ##Defaults to spectrum,ellipse,lorenz
@@ -46,7 +46,7 @@ visualizer.spectrum.bar.width=4
 visualizer.spectrum.bar.spacing=1
 
 ##Available smoothing options are monstercat, sgs, none.
-visualizer.spectrum.smoothing.mode=monstercat
+visualizer.spectrum.smoothing.mode=sgs
 
 ##This configures the falloff effect on the spectrum visualizer. Available falloff options are fill,top,none.
 ##Defaults to "fill"
@@ -57,17 +57,17 @@ visualizer.spectrum.falloff.mode=fill
 visualizer.spectrum.falloff.weight=0.96
 
 ##Margins in percent of total screen for spectrum visualizer. All margins default to 0
-visualizer.spectrum.top.margin=0.10
-visualizer.spectrum.bottom.margin=0.10
-visualizer.spectrum.right.margin=0.10
-visualizer.spectrum.left.margin=0.10
+visualizer.spectrum.top.margin=0.18
+visualizer.spectrum.bottom.margin=0.05
+visualizer.spectrum.right.margin=0
+visualizer.spectrum.left.margin=0.03
 
 ##Reverses the direction of the spectrum so that high freqs are first and low freqs last. Defaults to false.
 visualizer.spectrum.reversed=false
 
 ##This configures the sgs smoothing effect on the spectrum visualizer. More points spreads out the smoothing
 ##effect and increasing passes runs the smoother multiple times on reach run. Defaults are points=3 and passes=1
-visualizer.sgs.smoothing.points=3
+visualizer.sgs.smoothing.points=5
 visualizer.sgs.smoothing.passes=1
 
 
@@ -88,4 +88,4 @@ visualizer.sgs.smoothing.passes=1
 colors.override.terminal=true
 
 ##Specifies the color scheme. The color scheme must be in ~/.config/vis/colors/ directory. The default scheme is "colors".
-colors.scheme=orange,basic_colors,blue,rainbow
+colors.scheme=sunset,color_scheme,blue,violet,dragon
