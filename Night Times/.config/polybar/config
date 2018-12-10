@@ -1,0 +1,379 @@
+[colors]
+;background = ${xrdb:color0:#222}
+background = #FF5D5B
+background-alt = #7881DE
+foreground = #C1C2B2
+foreground-alt = #F3AF66
+primary = #ffb52a
+secondary = #e60053
+alert = #bd2c40
+
+[bar/top3]
+;width = 1880
+height = 32
+;offset-x = 20
+offset-y = 0
+bottom = true
+;radius = 5
+fixed-center = true
+
+border-size = 0
+border-color = #CC0B2643
+
+line-size = 0
+
+;background = #00BCD4
+background = #0B2643
+foreground = #000000
+
+padding-left = 0
+padding-right = 0
+
+font-0 = Envy Code R:size=10:style=Bold:antialias=true;2
+font-1 = Font Awesome 5 Brands:size=12;2
+font-2 = Font Awesome 5 Free:style=Regular:size=12;2
+font-3 = Font Awesome 5 Free:style=Solid:size=12;2
+font-4 = Font Awesome 5:size=12;3
+font-5 = Envy Code R:size=12:style=Bold:antialias=true;2
+
+module-margin-left = 4
+module-margin-right = 4
+
+modules-left = menu-apps volume wlan 
+modules-center = workspaces  
+modules-right = memory cpu battery date
+
+[module/workspaces]
+type = internal/xworkspaces
+pin-workspaces = false
+enable-click = true
+enable-scroll = false
+format-padding = 0
+icon-0 = Web;ï©
+icon-1 = Term;ï 
+icon-2 = Work;ï
+icon-3 = Org;ï
+icon-4 = Media;ï
+icon-5 = Mail;ï´
+icon-6 = Steam;ï
+icon-7 = Misc;ï½
+;icon-8 = 9;?
+;icon-9 = 10;?
+;icon-default = ""
+
+format = " <label-state>"
+
+label-active = "  %icon%  "
+label-active-foreground = #000000
+label-active-background = #CCE12E72
+label-active-underline = #34D2AE
+;label-active-overline = #34D2AE
+label-active-padding = 2
+
+label-empty = "  %icon%  "
+label-empty-padding = 2
+label-empty-foreground = #000000
+;label-empty-background = #34D2AE
+label-empty-background = #E12E72
+label-empty-underline = #EC4B5D
+
+[module/news-archlinux]
+type = custom/script
+exec = ~/.polybar-scripts/news-archlinux.py
+interval = 600
+
+format = " <label> "
+label = "%output:0:16:...%"
+;label-background = #2676FE
+
+[module/xwindow]
+type = internal/xwindow
+label = "%title:0:15:...%"
+label-background = 
+;label-underline = #88B455
+
+[module/filesystem1]
+type = internal/fs
+interval = 600
+
+fixed-values = false
+
+mount-0 = "/"
+;mount-1 = "/home"
+
+format = " <label> "
+format-mounted = "<label-mounted>"
+format-mounted-prefix = " "
+label-mounted-background = #4434D2
+format-mounted-prefix-background = #4434D2
+format-mounted-suffix = " "
+format-mounted-suffix-background = #4434D2
+format-mounted-underline = #D94BEC
+
+;label-mounted = %{F#000000}%mountpoint%%{F-}: %percentage_used%%
+label-mounted = %mountpoint%: %percentage_free%% of %total%
+
+label-unmounted = %mountpoint% not mounted
+
+[module/filesystem2]
+type = internal/fs
+interval = 600
+
+fixed-values = false
+
+mount-0 = "/home"
+;mount-1 = "/home"
+
+format = " <label> "
+format-mounted = "<label-mounted>"
+format-mounted-prefix = " "
+label-mounted-background = #3459D2
+format-mounted-prefix-background = #3459D2
+format-mounted-suffix = " "
+format-mounted-suffix-background = #3D5CD9
+format-mounted-underline = #B14BEC
+
+;label-mounted = %{F#000000}%mountpoint%%{F-}: %percentage_used%%
+label-mounted = %mountpoint%: %percentage_free%% of %total%
+
+label-unmounted = %mountpoint% not mounted
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+;format-prefix = "ÃÂ¯ÃÂÃÂ½"
+format-prefix = " CPU-Load: "
+;format-prefix-foreground = #C1C2B2
+format-foreground = #FFFFFF
+format-underline = #4B5EEC
+label ="%percentage%% "
+format-background = 
+
+[module/memory]
+type = internal/memory
+interval = 2
+;format-prefix =  "ÃÂ¯ÃÂÃÂ¸"
+format-prefix = " Memory: "
+format-prefix-background = 
+format-underline = #764BEC
+label ="%percentage_used%% "
+format-foreground = #FFFFFF
+
+format-background = 
+
+[module/wlan]
+type = internal/network
+interface = wlp3s0
+interval = 3.0
+
+format-connected = " <label-connected> "
+;format-connected-background = #34C2D2
+format-connected-underline = #EC4B83
+;label-connected = "ï« %essid%"
+label-connected = "Wlan: %essid%"
+format-connected-prefix = " "
+format-disconnected-prefix = " "
+
+format-disconnected = <label-disconnected> 
+;label-disconnected = " ï² No Connection "
+label-disconnected = " Wlan: Not Connected "
+;format-disconnected-background = #34C2D2
+format-disconnected-foreground = #FFFFFF
+format-connected-foreground = #FFFFFF
+
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
+ramp-signal-foreground = ${colors.foreground-alt}
+
+[module/openweathermap-fullfeatured]
+type = custom/script
+exec = ~/.polybar-scripts/openweathermap-fullfeatured.sh
+interval = 600
+label-font = 6
+
+format = "<label>"
+format-prefix = " "
+format-prefix-background = #D05704
+format-suffix = " "
+format-suffix-background = #D05704
+label-background = #D05704
+
+[module/date]
+type = internal/date
+interval = 5
+
+date = " %a %e %b "
+date-alt = "%D"
+
+time = "%H:%M"
+time-alt = %H:%M:%S
+
+format-prefix = " Â"
+format-background = #E12E72
+label = "%time% %date%"
+label-font = 6
+format = <label>
+
+[module/player-mpris-tail]
+type = custom/script
+exec = ~/.polybar-scripts/player-mpris-tail.py
+tail = true
+
+format= " <label> "
+label-font = 1
+format-prefix = " " 
+format-background = #7EAE52
+label = %output:0:30%...
+
+[module/volume]
+type = internal/volume
+
+format-volume = "<label-volume><bar-volume>"
+label-volume = " ï¨ "
+label-volume-background = 
+format-volume-underline = #EC4BC9
+format-volume-suffix = " "
+format-volume-suffix-background = 
+format-volume-foreground = #FFFFFF
+
+format-muted= " <label-muted> "
+label-muted = " ï¦ No Sound "
+label-muted-background = 
+
+bar-volume-width = 8
+;bar-volume-foreground = #000000
+;bar-volume-foreground-0 = #0B0F56
+;bar-volume-foreground-1 = #6B0E83
+;bar-volume-foreground-2 = #9D0F85
+;bar-volume-foreground-3 = #DA2670
+;bar-volume-foreground-4 = #F1AB53
+;bar-volume-foreground-5 = #F1AB53
+;bar-volume-foreground-6 = #F1AB53
+bar-volume-background = 
+bar-volume-gradient = false
+bar-volume-indicator = |
+bar-volume-indicator-font = 2
+bar-volume-indicator-background = 
+bar-volume-fill = ï¨
+bar-volume-fill-font = 2
+bar-volume-fill-background = 
+bar-volume-empty = ï¨
+bar-volume-empty-font = 2
+bar-volume-empty-background = 
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = ADP1
+full-at = 100
+
+format = " <label> "
+label-foreground = #C1C2B2
+format-foreground = #FFFFFF
+format-charging-foreground = #FFFFFF
+format-discharging-foreground = #FFFFFF
+
+format-charging = "<label-charging> "
+format-charging-prefix = " Charging: "
+;format-charging-background = #D2348E
+format-charging-background = 
+format-discharging = "<label-discharging> "
+format-discharging-prefix = " Battery: "
+;format-discharging-background = #D2348E
+format-discharging-background =
+format-discharging-underline = #4BDCEC
+
+ramp-capacity-0 = " ÃÂ¯ÃÂÃÂ"
+ramp-capacity-1 = " ÃÂ¯ÃÂÃÂ"
+ramp-capacity-2 = " ÃÂ¯ÃÂÃÂ"
+ramp-capacity-3 = " ÃÂ¯ÃÂÃÂ"
+ramp-capacity-4 = " ÃÂ¯ÃÂÃÂ"
+ramp-capacity-foreground = #FFFFFF
+ramp-capacity-background = #F3BC57
+
+animation-charging-0 = " ÃÂ¯ÃÂÃÂ"
+animation-charging-1 = " ÃÂ¯ÃÂÃÂ"
+animation-charging-2 = " ÃÂ¯ÃÂÃÂ"
+animation-charging-3 = " ÃÂ¯ÃÂÃÂ"
+animation-charging-4 = " ÃÂ¯ÃÂÃÂ"
+animation-charging-foreground = #C1C2B2
+animation-charging-framerate = 750
+
+[module/temperature]
+type = internal/temperature
+thermal-zone = 0
+warn-temperature = 60
+
+format = " <label> "
+format-prefix = " Temperature: "
+format-underline = #4BA6EC
+format-warn = " <label-warn> "
+format-warn-background = #7834D2
+format-background = #7834D2
+
+label = %temperature-c%
+label-warn = %temperature-c% 
+;label-warn-foreground = #000000
+;label-warn-background = #DF4B03
+
+ramp-0 = " ÃÂ¯ÃÂÃÂ"
+ramp-1 = " ÃÂ¯ÃÂÃÂ"
+ramp-2 = " ÃÂ¯ÃÂÃÂ"
+ramp-3 = " ÃÂ¯ÃÂÃÂ"
+ramp-4 = " ÃÂ¯ÃÂÃÂ"
+;ramp-foreground = #C1C2B2
+
+[module/menu-apps]
+type = custom/menu
+expand-right = true
+label-open-font = 6
+label-open = " Applications "
+label-close = " x "
+label-separator = |
+label-open-background = #E12E72
+label-close-backround = #E12E72
+
+menu-0-0 = Internet
+menu-0-0-exec = menu-open-1
+menu-0-1 = Office
+menu-0-1-exec = menu-open-2
+menu-0-2 = Multimedia
+menu-0-2-exec = menu-open-3
+menu-0-3 = Update
+menu-0-3-exec = pamac-manager &
+
+menu-1-0 = Firefox
+menu-1-0-exec = firefox &
+menu-1-1 = Thunderbird
+menu-1-1-exec = thunderbird &
+menu-1-2 = Steam
+menu-1-2-exec = steam &
+
+menu-2-0 = TextMaker
+menu-2-0-exec = textmaker18 &
+menu-2-1 = Presentations
+menu-2-1-exec = presentations18
+menu-2-2 = PlanMaker
+menu-2-2-exec = planmaker18
+
+menu-3-0 = Spotify
+menu-3-0-exec = spotify &
+menu-3-1 = Vlc
+menu-3-1-exec = vlc &
+
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+compositing-background = over
+;compositing-foreground = source
+;compositing-border = over
+format-background = 
+
+[global/wm]
+margin-top = 0
+margin-bottom = 0
+
+; vim:ft=dosini
