@@ -1,0 +1,69 @@
+! colors
+
+! Black 
+*.color0  : #000000
+*.color8  : #3D4049
+
+! red 
+*.color1  : #FAAD45
+*.color9  : #FAAD45
+
+! green
+*.color2  : #18859C
+*.color10 : #18859C
+
+! yellow
+*.color3  : #CF004B
+*.color11 : #CF004B
+
+! blue
+*.color4  : #FAAD45
+*.color12 : #FAAD45
+
+! magenta
+*.color5  : #A5118D
+*.color13 : #A5118D
+
+! cyan
+*.color6  : #CB185C
+*.color14 : #CB185C
+
+! white
+*.color7  : #FAAD45
+*.color15 : #ffffff
+
+
+! font
+Xft.dpi: 96
+Xft.antialias: true
+Xft.hinting: true
+Xft.rgba: rgb
+Xft.autohint: false
+Xft.hintstyle: hintsfull
+Xft.lcdfilter: lcddefault
+
+
+! urxvt-settings
+
+URxvt*depth: 32
+URxvt*background: [90]#2D3341
+URxvt*foreground:       #C1C2B2
+! URxvt*font:           xft:Envy Code R:Regular:antialias=false:size=9
+URxvt*font:           xft:FuraCode Nerd Font Mono:Medium:antialias=false:size=9
+! URxvt*imFont:         xft:Envy Code R:regular:size=8
+URxvt*boldFont:       xft:FuraCode Nerd Font Mono:Bold:antialias=false:size=9
+! URxvt*italicFont:     xft:Envy Code R:italic:size=8
+! URxvt*boldItalicFont: xft:Envy Code R:regular:size=8
+! URxvt.underlineColor:   #4682B4
+! URxvt.highlightColor:   #4682B4
+! URxvt.throughColor:     Blue
+! URxvt*cursorColor:      #dc8cc3
+! URxvt*cursorColor2:     Black
+URxvt*scrollBar:        false
+URxvt*scrollBar_right:  false
+URxvt*internalBorder:   40
+URxvt*externalBorder:   40
+! URxvt.colorIT:      	#87af5f
+! URxvt.colorBD:      	#c5c8c6
+! URxvt.colorUL:      	#87afd7
+! URxvt.geometry: 		92x16
