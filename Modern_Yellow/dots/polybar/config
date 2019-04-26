@@ -13,9 +13,8 @@ alert = #bd2c40
 ######## Bars ###############################
 
 [bar/bottom]
-;width = 1350
 height = 22
-;offset-x = 285
+offset-x = 0
 offset-y = 0
 bottom = true 
 
@@ -25,14 +24,12 @@ border-color = #2D3341
 line-size = 0
 
 background = #2D3341
-;background = #0B2643
 foreground = #2D3341
 
 padding-left = 0
 padding-right = 0
 
 font-0 = FuraCode Nerd Font Mono:style=medium:size=15;3
-;font-1 = Fantasque Sans Mono Nerd Font:size=16;4
 font-1 = FuraCode Nerd Font Mono:style=medium:size=15;3
 font-2 = Font Awesome 5 Brands:size=15;2
 font-3 = Font Awesome 5 Free:style=Regular:size=15;2
@@ -223,7 +220,6 @@ interval = 2
 format-prefix-background = #FA2622
 ;format-underline = #764BEC
 label =" %percentage_used%% "
-;format-foreground = #2D3341
 
 format-background = #18859C
 
@@ -235,14 +231,10 @@ interval = 3.0
 format-connected = " <label-connected>"
 format-connected-background = #18859C
 label-connected = " on "
-;format-connected-prefix = " "
-;format-disconnected-prefix = " "
 
 format-disconnected = <label-disconnected> 
 label-disconnected = " off "
-;format-disconnected-background = #34C2D2
-;format-disconnected-foreground = #FFFFFF
-;format-connected-foreground = #FFFFFF
+format-disconnected-background = #18859C
 
 ramp-signal-0 = 
 ramp-signal-1 = 
@@ -250,19 +242,6 @@ ramp-signal-2 =
 ramp-signal-3 = 
 ramp-signal-4 = 
 ramp-signal-foreground = ${colors.foreground-alt}
-
-[module/openweathermap-fullfeatured]
-type = custom/script
-exec = ~/.polybar-scripts/openweathermap-fullfeatured.sh
-interval = 600
-label-font = 2
-
-format = "<label>"
-format-prefix = " "
-format-prefix-background = #D05704
-format-suffix = " "
-format-suffix-background = #D05704
-label-background = #D05704
 
 [module/date]
 type = internal/date
@@ -276,18 +255,6 @@ format-prefix =
 format-background = #CF004B
 label = "%date% %time% "
 format = <label>
-
-[module/player-mpris-tail]
-type = custom/script
-exec = ~/.polybar-scripts/player-mpris-tail.py
-tail = true
-
-format= " <label> "
-label-font = 1
-format-prefix = " " 
-format-background = #7EAE52
-label = %output:0:30...%
-;label = %output%
 
 [module/volume]
 type = internal/volume
@@ -365,59 +332,14 @@ warn-temperature = 60
 
 format = " <label> "
 format-prefix = " "
-format-warn = " <label-warn> "
+format-warn = " <label-warn> "
 format-warn-background = #18859C
 format-background = #18859C
 
 label = %temperature-c%
 label-warn = %temperature-c% 
-;label-warn-foreground = #000000
-;label-warn-background = #DF4B03
 
-ramp-0 = " ÃÂ¯ÃÂÃÂ"
-ramp-1 = " ÃÂ¯ÃÂÃÂ"
-ramp-2 = " ÃÂ¯ÃÂÃÂ"
-ramp-3 = " ÃÂ¯ÃÂÃÂ"
-ramp-4 = " ÃÂ¯ÃÂÃÂ"
-;ramp-foreground = #C1C2B2
-
-[module/menu-apps]
-type = custom/menu
-expand-right = true
-label-open-font = 6
-label-open = " Applications "
-label-close = " x "
-label-separator = |
-label-open-background = #E12E72
-label-close-backround = #E12E72
-
-menu-0-0 = Internet
-menu-0-0-exec = menu-open-1
-menu-0-1 = Office
-menu-0-1-exec = menu-open-2
-menu-0-2 = Multimedia
-menu-0-2-exec = menu-open-3
-menu-0-3 = Update
-menu-0-3-exec = pamac-manager &
-
-menu-1-0 = Firefox
-menu-1-0-exec = firefox &
-menu-1-1 = Thunderbird
-menu-1-1-exec = thunderbird &
-menu-1-2 = Steam
-menu-1-2-exec = steam &
-
-menu-2-0 = TextMaker
-menu-2-0-exec = textmaker18 &
-menu-2-1 = Presentations
-menu-2-1-exec = presentations18
-menu-2-2 = PlanMaker
-menu-2-2-exec = planmaker18
-
-menu-3-0 = Spotify
-menu-3-0-exec = spotify &
-menu-3-1 = Vlc
-menu-3-1-exec = vlc &
+#############################################
 
 [settings]
 screenchange-reload = true

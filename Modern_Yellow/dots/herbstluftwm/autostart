@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# this is a simple config for herbstluftwm
+# my autostart for herbstluftwm 
 
 config="~/.config/herbstluftwm/autostart"
 
@@ -16,26 +16,24 @@ xsetroot -solid '#5A8E3A'
 hc keyunbind --all
 
 # keybindings
-# if you have a super key you will be much happier with Mod set to Mod4
 Mod=Mod1    # Use alt as the main modifier
-#Mod=Mod4   # Use the super key as the main modifier
+# Mod=Mod4   # Use the super key as the main modifier
 
 hc keybind $Mod-Shift-e quit
 hc keybind $Mod-Shift-r reload
 hc keybind $Mod-q close
-# hc keybind $Mod-Return spawn ${TERMINAL:-xfce4-terminal} # use your $TERMINAL with xterm as fallback
 hc keybind $Mod-Return spawn ${TERMINAL:-urxvt}
 
 hc keybind $Mod-t spawn ~/.scripts/dmenu/themeselector.sh
 hc keybind $Mod-x spawn ~/.scripts/dmenu/launcher.sh
 
 # media keys
-hc keybind XF86AudioRaiseVolume spawn ~/.config/herbstluftwm/volumeup.sh
-hc keybind XF86AudioLowerVolume spawn ~/.config/herbstluftwm/volumedown.sh
-hc keybind XF86AudioMute spawn ~/.config/herbstluftwm/volumemute.sh
-hc keybind XF86AudioPlay spawn ~/.config/herbstluftwm/play.sh
-hc keybind XF86AudioNext spawn ~/.config/herbstluftwm/next.sh
-hc keybind XF86AudioPrev spawn ~/.config/herbstluftwm/prev.sh
+hc keybind XF86AudioRaiseVolume spawn ~/.scripts/hlwm/volumeup.sh
+hc keybind XF86AudioLowerVolume spawn ~/.scripts/hlwm/volumedown.sh
+hc keybind XF86AudioMute spawn ~/.scripts/hlwm/volumemute.sh
+hc keybind XF86AudioPlay spawn ~/.scripts/hlwm/play.sh
+hc keybind XF86AudioNext spawn ~/.scripts/hlwm/next.sh
+hc keybind XF86AudioPrev spawn ~/.scripts/hlwm/prev.sh
 
 # basic movement
 # focusing clients
@@ -71,6 +69,7 @@ hc keybind $Mod-Control-h       resize left +$resizestep
 hc keybind $Mod-Control-j       resize down +$resizestep
 hc keybind $Mod-Control-k       resize up +$resizestep
 hc keybind $Mod-Control-l       resize right +$resizestep
+
 hc keybind $Mod-Control-Left    resize left +$resizestep
 hc keybind $Mod-Control-Down    resize down +$resizestep
 hc keybind $Mod-Control-Up      resize up +$resizestep
@@ -93,7 +92,7 @@ done
 # cycle through tags
 hc keybind $Mod-period use_index +1 --skip-visible
 hc keybind $Mod-comma  use_index -1 --skip-visible
-hc keybind $Mod-d spawn dmenu_runÂ´
+hc keybind $Mod-d spawn dmenu_run´
 # hc keybind $Mod-d spawn rofi
 
 # layouting
@@ -116,41 +115,43 @@ hc load Web '
 '
 
 hc load Term '
-(split horizontal:0.500000:0
- (clients max:0 0x1e0000a)
- (clients max:0 0x200000a))
+(split horizontal:0.450000:0
+ (clients max:0)
+  (split vertical:0.650000:1
+   (clients max:0)
+    (clients max:0)))
 '
 
 hc load Work '
 (split horizontal:0.700000:0
  (clients max:1 0x1000007 0x4e0000a)
- (split vertical:0.500000:1
- (clients max:0 0xa02e1d)
- (clients max:0 0xa02af3)))
+  (split vertical:0.500000:1
+   (clients max:0 0xa02e1d)
+    (clients max:0 0xa02af3)))
 '
 
 hc load Org '
-(split horizontal:0.350000:1
- (split vertical:0.500000:0
- (clients max:0 0x22002ad)
- (clients max:0 0x2200003))
- (clients max:0))
+(split horizontal:0.300000:0
+ (split vertical:0.400000:0
+  (clients max:0 0x2a00290)
+   (split vertical:0.650000:0
+    (clients max:0 0x2a00003)
+     (clients max:0)))
+      (clients max:0))
 '
 
 hc load Media '
-(split horizontal:0.400000:0
- (split vertical:0.750000:0
- (clients max:0 0x2600001)
- (clients vertical:0))
- (split vertical:0.350000:1 
-(clients vertical:0)
- (clients max:0)))
+(split horizontal:0.450000:0
+ (clients max:0)
+  (split vertical:0.400000:0
+   (clients max:0)
+    (clients max:0)))
 '
 
 hc load Mail '
 (split horizontal:0.600000:0
  (clients max:2 0x2400010 0x240013b 0x2c4d1ac)
- (clients vertical:0))
+  (clients vertical:0))
 '
 
 # mouse
@@ -169,7 +170,6 @@ hc keybind $Mod-i jumpto urgent
 # theme
 hc attr theme.tiling.reset 1
 hc attr theme.floating.reset 1
-# hc set frame_border_active_color '#34D2AE'
 hc set frame_border_active_color '#FAAD45'
 hc set frame_border_normal_color '#E12E72'
 hc set frame_bg_normal_color ''
@@ -194,8 +194,6 @@ hc attr theme.border_width 5
 hc attr theme.floating.border_width 10
 hc attr theme.floating.outer_width 5
 hc attr theme.floating.outer_color '#FE1F9C' 
-#hc attr theme.active.inner_color '#FAB148'
-#hc attr theme.active.outer_color '#FAB148'
 hc attr theme.background_color '#59000000'
 
 hc set window_border_width 0
@@ -207,15 +205,16 @@ hc set mouse_recenter_gap 0
 
 # rules
 hc unrule -F
-#hc rule class=XTerm tag=3 # move all xterms to tag 3
-hc rule focus=on # normally focus new clients
-#hc rule focus=off # normally do not focus new clients
-# give focus to most common terminals
-#hc rule class~'(.*[Rr]xvt.*|.*[Tt]erm|Konsole)' focus=on
+hc rule focus=on 
+hc rule class~'(.*[Rr]xvt.*|.*[Tt]erm|Konsole)' focus=on
 hc rule windowtype~'_NET_WM_WINDOW_TYPE_(DIALOG|UTILITY|SPLASH)' pseudotile=on
-hc rule windowtype='_NET_WM_WINDOW_TYPE_DIALOG' focus=on
+hc rule windowtype~'_NET_WM_WINDOW_TYPE_DIALOG' focus=on
 hc rule windowtype~'_NET_WM_WINDOW_TYPE_(NOTIFICATION|DOCK|DESKTOP)' manage=off
+
+# app-spercific rules
 hc rule class=Steam tag=Steam
+hc rule class=Thunderbird tag=Mail
+
 # unlock, just to be sure
 hc unlock
 
@@ -241,8 +240,13 @@ done
 #  Startup  #
 #############
 
-nitrogen --set-centered --random  &
+nitrogen --set-scaled --random  &
 setxkbmap de &
 compton &
 xfce4-power-manager &
 udiskie &
+xrdb ~/.Xresources &
+urxvtd -f &
+lxpolkit &
+dunst &
+
