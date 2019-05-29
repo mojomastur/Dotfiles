@@ -1,0 +1,314 @@
+###### Colors ###############################
+
+[colors]
+;background = #373f51
+background = #1d1f21
+background-alt = #7881DE
+foreground = #C1C2B2
+foreground-alt = #F3AF66
+alert = #bd2c40
+
+yellow = #ffbf00
+pink = #ff206e
+green = #b0db43
+white = #f7f7f2
+
+######## Bars ###############################
+
+[bar/1]
+height = 19
+width = 1891
+;width = 1700
+offset-x = 14
+;offset-x = 110
+offset-y = 8
+bottom = true 
+fixed-center = true
+
+border-size = 9
+border-color = ${colors.background}
+
+line-size = 0
+
+background = ${colors.background}
+foreground = ${colors.background}
+
+padding-left = 0
+padding-right = 0
+
+font-0 = TerminessTTF Nerd Font Mono:style=Bold:size=15;3
+font-1 = TerminessTTF Nerd Font Mono:pixelsize=12;3
+
+module-margin-left = 0
+module-margin-right = 0
+
+modules-left = left2 left4 left1 workspaces left4 left1 m1 m2 wlan left4 left1 c1 c2 cpu
+modules-center = 
+modules-right = temperature b2 t1 right1 right4 battery b2 b1 right1 right4 volume right1 right4 date right1 right4 right2
+
+
+###### Arrows ###################################
+
+[module/right1]
+type = custom/text
+content = ""
+content-foreground = ${colors.green}
+content-background = ${colors.background}
+
+[module/left1]
+type = custom/text
+content = ""
+content-foreground = ${colors.green}
+content-background = ${colors.background}
+
+[module/right2]
+type = custom/text
+content = ""
+content-foreground = ${colors.green}
+content-background = ${colors.background}
+
+[module/left2]
+type = custom/text
+content = ""
+content-foreground = ${colors.green}
+content-background = ${colors.background}
+
+[module/right3]
+type = custom/text
+content = ""
+content-foreground = ${colors.pink}
+content-background = ${colors.background}
+
+[module/left3]
+type = custom/text
+content = ""
+content-foreground = ${colors.yellow}
+content-background = ${colors.background}
+
+[module/left4]
+type = custom/text
+content = ""
+content-foreground = ${colors.white}
+content-background = ${colors.background}
+
+[module/right4]
+type = custom/text
+content = ""
+content-foreground = ${colors.white}
+content-background = ${colors.background}
+
+[module/m1]
+type = custom/text
+content = "  "
+content-foreground = ${colors.background}
+content-background = ${colors.yellow}
+
+[module/m2]
+type = custom/text
+content = ""
+content-foreground = ${colors.pink}
+content-background = ${colors.yellow}
+
+[module/c1]
+type = custom/text
+content = "  "
+content-foreground = ${colors.background}
+content-background = ${colors.yellow}
+
+[module/c2]
+type = custom/text
+content = ""
+content-foreground = ${colors.yellow}
+content-background = ${colors.pink}
+
+
+[module/b1]
+type = custom/text
+content = "  "
+content-foreground = ${colors.background}
+content-background = ${colors.yellow}
+content-font = 2
+
+[module/b2]
+type = custom/text
+content = ""
+content-foreground = ${colors.yellow}
+content-background = ${colors.pink}
+
+[module/t1]
+type = custom/text
+content = "  "
+content-foreground = ${colors.background}
+content-background = ${colors.yellow}
+
+[module/dummy]
+type = custom/text
+content = " "
+content-foreground = ${colors.background}
+content-background = ${colors.background}
+
+##### Workspaces #################################
+
+[module/workspaces]
+type = internal/xworkspaces
+pin-workspaces = false
+enable-click = true
+enable-scroll = false
+format-padding = 0
+;icon-0 = Web;
+;icon-1 = Term;
+;icon-2 = Work;
+;icon-3 = Org;
+;icon-4 = Media;
+;icon-5 = Mail;
+;icon-6 = Steam;
+;icon-7 = Misc;
+;icon-8 = 9;?
+;icon-9 = 10;?
+icon-default = "◆"
+
+format = "<label-state>"
+
+label-active = " ◊ %name% "
+label-active-foreground = ${colors.background}
+label-active-background = ${colors.yellow}
+label-active-padding = 0
+label-active-font = 1
+
+label-empty = " %icon% "
+label-empty-padding = 0
+label-empty-foreground = ${colors.background}
+label-empty-background = ${colors.pink}
+label-empty-font = 1
+
+###############################################################
+
+
+##################################################################
+[module/cpu]
+type = internal/cpu
+interval = 2
+label =" %percentage%% "
+format-background = ${colors.pink}
+
+[module/memory]
+type = internal/memory
+interval = 2
+;format-prefix = " Memory: "
+format-prefix-background = #FA2622
+;format-underline = #764BEC
+label =" %percentage_used%% "
+
+format-background = #18859C
+
+[module/wlan]
+type = internal/network
+interface = wlp3s0
+interval = 3.0
+
+format-connected = "  <label-connected>"
+format-connected-background = ${colors.pink}
+label-connected = " on "
+
+format-disconnected = <label-disconnected> 
+label-disconnected = " off "
+format-disconnected-background = ${colors.pink}
+
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
+ramp-signal-foreground = ${colors.foreground-alt}
+
+[module/date]
+type = internal/date
+interval = 5
+
+date = " %a %e %b"
+
+time = "%H:%M"
+
+format-prefix = 
+format-background = ${colors.yellow}
+label = "%date% %time% "
+format = <label>
+
+[module/volume]
+type = internal/volume
+
+format-volume = "<label-volume><bar-volume>"
+label-volume = "VOL"
+label-volume-background = ${colors.pink}
+
+format-muted= "<label-muted><bar-volume>"
+label-muted = "  "  
+label-muted-background = ${colors.yellow}
+
+bar-volume-width = 8
+bar-volume-foreground = #2D3341
+;bar-volume-foreground-0 = #0B0F56
+;bar-volume-foreground-1 = #6B0E83
+;bar-volume-foreground-2 = #9D0F85
+;bar-volume-foreground-3 = #DA2670
+;bar-volume-foreground-4 = #F1AB53
+;bar-volume-foreground-5 = #F1AB53
+;bar-volume-foreground-6 = #F1AB53
+bar-volume-background = #CF004B
+bar-volume-gradient = false
+
+bar-volume-indicator = 
+bar-volume-indicator-background = ${colors.background}
+bar-volume-indicator-foreground = ${colors.pink}
+
+bar-volume-fill = 
+bar-volume-fill-background = ${colors.background}
+bar-volume-fill-foreground = ${colors.pink}
+
+bar-volume-empty = 
+bar-volume-empty-background = ${colors.background}
+bar-volume-empty-foreground = ${colors.yellow}
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = ADP1
+full-at = 100
+
+format = " <label>"
+format-charging = " <label-charging>"
+format-charging-suffix = " "
+format-charging-background = ${colors.pink}
+format-discharging = " <label-discharging>"
+format-discharging-suffix = " "
+format-discharging-background = ${colors.pink}
+
+[module/temperature]
+type = internal/temperature
+thermal-zone = 0
+warn-temperature = 60
+
+format = " <label>"
+format-suffix = " "
+format-warn = " <label-warn>"
+format-warn-background = ${colors.pink}
+format-background = ${colors.pink}
+
+label = %temperature-c%
+label-warn = %temperature-c% 
+
+#############################################
+
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+compositing-background = over
+;compositing-foreground = source
+;compositing-border = over
+format-background = 
+
+[global/wm]
+margin-top = 0
+margin-bottom = 0
+
+; vim:ft=dosini
