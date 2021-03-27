@@ -1,0 +1,354 @@
+# Polybar config by mojomastur
+# 
+# This bar consists of 6 seperate instances of polybar
+# and was made with a 2560x1440 monitor in mind,
+# so width and offset-x values will have to be adjusted accordingly
+# when using any other resolution.
+# 
+# Fonts need to have glyphs patched in, in order to work properly
+# and the shapes might get misaligned, when using another font
+# so you will need to play around with different sizes.
+ 
+
+###### Colors ###############################
+
+[colors]
+bg= #121619
+fg= #ffffff
+orange = #FF6D00
+green = #35BB58
+red = #D41920
+blue = #009DD7
+
+######## Bars ###############################
+
+[bar/right]
+height = 25
+width = 960 	
+bottom = true 
+offset-x = 1300
+offset-y = 0
+
+border-top-size = 8
+border-top-color = ${colors.bg}
+
+border-bottom-size = 12 
+border-bottom-color = ${colors.blue}
+
+underline-size = 8
+underline-color = ${colors.bg}
+
+background = ${colors.bg}
+foreground = ${colors.bg}
+
+padding-left = 0
+padding-right = 0
+
+font-0 = TerminessTTF Nerd Font Mono:style=Bold:size=15;-1
+
+modules-left =  
+modules-center = workspaces
+modules-right = 
+
+[bar/left]
+height = 25
+width = 960
+bottom = true
+offset-x = 300
+offset-y = 0
+
+border-top-size = 12
+border-top-color = ${colors.green}
+
+border-bottom-size = 8
+border-bottom-color = ${colors.bg}
+
+overline-size = 8
+overline-color = ${colors.bg}
+
+background = ${colors.bg}
+foreground = ${colors.bg}
+
+padding-left = 0
+padding-right = 0
+
+font-0 = TerminessTTF Nerd Font Mono:style=Bold:size=15;7
+
+modules-left = 
+modules-center = vol sep pulseaudio m1 sep wlan c1 sep cpu mem sep memory
+modules-right = 
+
+[bar/right2]
+height = 45
+width = 300	
+bottom = true
+offset-x = 2260	
+offset-y = 0
+
+background = ${colors.blue}
+foreground = ${colors.bg}
+
+font-0 = TerminessTTF Nerd Font Mono:style=Bold:size=17;4
+font-1 = TerminessTTF Nerd Font Mono:style=medium:size=30;-4
+
+ 
+modules-left = right1
+modules-center = date
+modules-right =
+
+[bar/left2]
+height = 45
+width = 300
+bottom = true
+offset-x = 0
+offset-y = 0
+ 
+background = ${colors.green}
+foreground = ${colors.bg}
+
+font-0 = TerminessTTF Nerd Font Mono:style=Bold:size=17;4
+font-1 = TerminessTTF Nerd Font Mono:style=medium:size=30;17
+
+modules-left = 
+modules-center = linux
+modules-right = midleft2
+
+[bar/mid1]
+height = 45
+width = 20
+bottom = true
+offset-x = 1280
+offset-y = 0
+
+background = ${colors.bg}
+foreground = ${colors.bg}
+
+font-0 = TerminessTTF Nerd Font Mono:style=Bold:size=17;4
+font-1 = TerminessTTF Nerd Font Mono:style=medium:size=30;-3
+
+modules-right = midright 
+
+[bar/mid2]
+height = 45
+width = 20
+bottom = true
+offset-x = 1260
+offset-y = 0
+
+background = ${colors.orange}
+foreground = ${colors.bg}
+ 
+font-0 = TerminessTTF Nerd Font Mono:style=Bold:size=17;4
+font-1 = TerminessTTF Nerd Font Mono:style=medium:size=30;17
+ 
+modules-left = midleft
+modules-center =  
+modules-right =
+
+###### Custom ###################################
+
+[module/linux]
+type = custom/script
+exec = uname -r 
+interval = 1200
+
+[module/midright]
+type = custom/text
+content = ""
+content-foreground = ${colors.bg}
+content-background = ${colors.blue}
+content-font = 2
+
+[module/midleft2]
+type = custom/text
+content = ""
+content-foreground = ${colors.bg}
+content-background = ${colors.green}
+content-font = 2
+
+[module/midleft]
+type = custom/text
+content = ""
+content-foreground = ${colors.bg}
+content-background = ${colors.green}
+content-font = 2
+
+###### Arrows ####################################
+
+[module/right1]
+type = custom/text
+content = ""
+content-foreground = ${colors.bg}
+content-background = ${colors.blue}
+content-font = 2
+
+[module/left1]
+type = custom/text
+content = ""
+content-foreground = ${colors.red}
+content-background = ${colors.bg}
+
+[module/right2]
+type = custom/text
+content = ""
+content-foreground = ${colors.red}
+content-background = ${colors.bg}
+
+[module/left2]
+type = custom/text
+content = ""
+content-foreground = ${colors.red}
+content-background = ${colors.bg}
+
+[module/m1]
+type = custom/text
+content = "  "
+content-foreground = ${colors.bg}
+content-background = ${colors.orange}
+content-overline = ${colors.bg}
+
+[module/mem]
+type = custom/text
+content = "  "
+content-foreground = ${colors.bg}
+content-background = ${colors.orange}
+content-overline = ${colors.bg}
+
+[module/sep]
+type = custom/text
+content = ""
+content-foreground = ${colors.red}
+content-background = ${colors.orange}
+content-overline = ${colors.bg}
+
+[module/c1]
+type = custom/text
+content = "  "
+content-foreground = ${colors.bg}
+content-background = ${colors.orange}
+content-overline = ${colors.bg}
+
+[module/vol]
+type = custom/text
+content = "  "
+content-foreground = ${colors.bg}
+content-background = ${colors.orange}
+content-overline = ${colors.bg}
+
+##### Workspaces #################################
+
+[module/workspaces]
+type = internal/xworkspaces
+pin-workspaces = false
+enable-click = true
+enable-scroll = false
+format-padding = 0
+icon-default = "◆"
+
+format = "<label-state>"
+
+label-active = "  %name%  "
+label-active-foreground = ${colors.bg}
+label-active-background = ${colors.red}
+label-active-underline = ${colors.bg}
+label-active-padding = 0
+label-active-font = 1
+
+label-empty = "  %icon%  "
+label-empty-padding = 0
+label-empty-foreground = ${colors.bg}
+label-empty-background = ${colors.orange}
+label-empty-underline = ${colors.bg}
+label-empty-font = 1
+
+label-occupied = "  %icon%  "
+label-occupied-padding = 0
+label-occupied-foreground = ${colors.bg}
+label-occupied-background = ${colors.orange}
+label-occupied-underline = ${colors.bg}
+label-occupied-font = 1
+ 
+
+##### Cpu ######################################################
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+label = "  %percentage%%  "
+label-overline = ${colors.bg}
+format-background = ${colors.red}
+
+##### Wlan #########################################################
+
+[module/wlan]
+type = internal/network
+interface = enp4s0
+interval = 3.0
+
+
+format-connected = " <label-connected>"
+format-connected-background = ${colors.red}
+label-connected = "  on  "
+label-connected-overline = ${colors.bg}
+
+format-disconnected = <label-disconnected> 
+label-disconnected = "  off  "
+format-disconnected-background = ${colors.red}
+label-disconnected-overline = ${colors.red}
+
+##### Date/Time ############################################################
+
+[module/date]
+type = internal/date
+interval = 5
+
+date = " %a %e %b"
+
+time = "%H:%M"
+
+format-prefix = 
+format-background = ${colors.blue}
+label = "%date% %time% "
+format = <label>
+
+##### Volume ##################################################################
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+format-volume = <label-volume>
+label-volume = "  %percentage%%  "
+label-volume-background = ${colors.red}
+label-volume-overline = ${colors.bg}
+format-background = ${colors.red}
+
+format-muted= "<label-muted>"
+label-muted = "  muted  "  
+label-muted-background = ${colors.red}
+label-muted-overline = ${colors.bg}
+
+###### Memory ##################################################################
+
+[module/memory]
+type = internal/memory
+interval = 2
+
+label = "  %percentage_used%%  "
+label-overline = ${colors.bg}
+format-background = ${colors.red}
+
+###### Settings #################################################################
+
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+compositing-background = over
+compositing-foreground = source
+;compositing-border = over
+format-background = 
+
+[global/wm]
+margin-top = 0
+margin-bottom = 0
+
+; vim:ft=dosini

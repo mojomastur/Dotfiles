@@ -1,0 +1,63 @@
+! colors
+
+! Black 
+*.color0  : #000000
+*.color8  : #0B0A07
+
+! red 
+*.color1  : #D41920
+*.color9  : #D41920
+
+! green
+*.color2  : #35BB58
+*.color10 : #35BB58
+
+! yellow
+*.color3  : #FF6D00
+*.color11 : #FF6D00
+
+! blue
+*.color4  : #009DD7
+*.color12 : #009DD7
+
+! magenta
+*.color5  : #9D004A 
+*.color13 : #9D004A
+
+! cyan
+*.color6  : #4BEC94
+*.color14 : #4BEC94
+
+! white
+*.color7  : #f1faee
+*.color15 : #ffffff
+
+
+! font
+Xft.dpi:        91.79
+Xft.antialias:  true
+Xft.hinting:    true
+Xft.rgba:       rgb
+Xft.autohint:   false
+Xft.hintstyle:  hintsfull
+Xft.lcdfilter:  lcddefault
+
+
+! urxvt-settings
+
+URxvt*depth:               32 
+URxvt*background:          [85]#121619
+URxvt*foreground:          #EEF0F2
+URxvt*font:                xft:TerminessTTF Nerd Font Mono:Medium:antialias=true:size=13
+URxvt*boldFont:            xft:TerminessTTF Nerd Font Mono:Bold:antialias=true:size=13
+URxvt.highlightColor:      #FAAD45
+URxvt.highlightTextColor:  #000000
+URxvt*scrollBar:           false
+URxvt*scrollBar_right:     false
+URxvt*internalBorder:      25
+URxvt*externalBorder:      0
+
+! urxvt extensions
+
+URxvt.perl-ext-common:     resize-font
+
